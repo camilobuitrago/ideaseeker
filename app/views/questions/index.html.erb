@@ -1,0 +1,7 @@
+<h3>Your saved questions</h3>
+
+<ul>
+  <% @questions.each do |q| %>
+    <li><%= q.text %>. With adjectives <%= q.adjectives %></li>
+  <% end %>
+</ul>

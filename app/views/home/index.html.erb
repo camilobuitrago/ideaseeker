@@ -1,4 +1,27 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+<h3>What are you looking for?</h3>
+<br />
+<%= form_for Question.new do |f|%>
+  <div class='question_box'>
+    <%= label_tag "A Question" %>
+    <%= f.text_field :text %>
+  </div>
+  <div class='adjectives_box'>
+    <%= label_tag "Adjectives" %>
+    <%= text_field_tag "quesiton[adjective][]" %>
+    <button class='btn'>+</button>
+  </div>
+  <br />
+  <%= f.submit "Seek Ideas!", class: 'btn btn-primary' %>
+  <%= f.submit "Save question", class: 'btn btn-warning' %>
 <% end %>
+
+<br />
+<br />
+<br />
+
+<h3>We have found this for you...</h3>
+<ul class="answers_list">
+  <li>Tweet 1</li>
+  <li>Tweet 2</li>
+  <li>Tweet 3</li>
+</ul>
